@@ -4,7 +4,7 @@ import { GithubCommit, GithubRepoContributor, GithubRepositoryInfo } from "../ty
 export const searchRepoByName = async (searchText: string): Promise<GithubRepositoryInfo[]> => {
   const result = await request('GET /search/repositories', {
     headers: {
-      authorization: "token e94e95da35ca0d0224ec84398f9af90f1074ca38",
+      authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
     },
     q: searchText
   })
@@ -20,7 +20,7 @@ export const searchRepoByName = async (searchText: string): Promise<GithubReposi
 export const getRepoContributors = async (owner: string, repo: string): Promise<GithubRepoContributor[]> => {
   const result = await request('GET /repos/{owner}/{repo}/contributors', {
     headers: {
-      authorization: "token e94e95da35ca0d0224ec84398f9af90f1074ca38",
+      authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
     },
     owner,
     repo
@@ -39,7 +39,7 @@ export const getRepoContributors = async (owner: string, repo: string): Promise<
 export const getRepoCommits = async (owner: string, repo: string): Promise<GithubCommit[]> => {
   const result = await request('GET /repos/{owner}/{repo}/commits', {
     headers: {
-      authorization: "token e94e95da35ca0d0224ec84398f9af90f1074ca38",
+      authorization: `token ${process.env.NEXT_PUBLIC_GITHUB_TOKEN}`,
     },
     owner,
     repo
