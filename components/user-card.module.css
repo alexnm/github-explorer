@@ -1,4 +1,29 @@
+.wrapper {
+  border: 1px solid var(--color-fg-300);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  width: auto;
+  padding-right: 1rem;
+  transition: var(--animation-fade);
+}
+
+.wrapper:hover,
+.wrapper:focus {
+  box-shadow: var(--drop-shadow);
+}
+
+.wrapper:focus {
+  outline: none;
+  border-color: var(--color-accent-500);
+}
+
 .image {
-  width: 100px;
+  width: 4rem;
   border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.name {
+  font-weight: 700;
 }

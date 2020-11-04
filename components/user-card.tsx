@@ -7,11 +7,11 @@ export interface UserCardProps {
 }
 
 export const UserCard: React.FC<UserCardProps> = ({ user }) => (
-  <div>
+  <a className={styles.wrapper} href={user.url} target="_blank" rel="noreferrer noopener">
     <img className={styles.image} src={user.avatar} />
-    <a href={user.url} target="_blank" rel="noreferrer noopener">
-      {user.name}
-    </a>
-    <span>{user.contributions} contributions</span>
-  </div>
+    <div>
+      <p className={styles.name}>{user.name}</p>
+      <p className={styles.info}>{user.contributions} commits</p>
+    </div>
+  </a>
 )

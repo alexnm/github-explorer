@@ -1,9 +1,44 @@
+:root {
+  --color-bg-500: #fff;
+  --color-bg-400: #ddd;
+  --color-bg-300: #bbb;
+  --color-fg-500: #333;
+  --color-fg-400: #555;
+  --color-fg-300: #777;
+  --color-accent-500: #28a745;
+  --color-accent-400: #22863a;
+  --color-accent-300: #176f2c;
+  --color-accent-200: #165c26;
+  --color-accent-100: #144620;
+
+  --drop-shadow: 0 2px 8px 1px rgba(18, 18, 18, 0.3);
+  --animation-fade: all 0.15s ease-out;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-size: 100%;
+  color: var(--color-fg-500);
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
 }
 
 a {

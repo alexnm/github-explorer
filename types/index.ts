@@ -3,6 +3,8 @@ export interface GithubRepositoryInfo {
   name: string
   ownerName: string
   stars: number
+  forks: number
+  description: string
 }
 
 export interface GithubRepoContributor {

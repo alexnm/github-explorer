@@ -1,0 +1,28 @@
+.charts {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+@media only screen and (min-width: 855px) {
+  .charts {
+    flex-direction: row;
+  }
+}
+
+.contributors {
+  margin-top: 2rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: -1rem;
+}
+
+.list > * {
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
