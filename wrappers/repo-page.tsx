@@ -41,7 +41,7 @@ export const RepoPageWrapper: React.FC<RepoPageWrapperProps> = ({ owner, repo })
 
   return (
     <Layout extraTitle={`${owner}/${repo}`}>
-      <h2>Project Activity - last 100 commits</h2>
+      <h2>Project Activity</h2>
       <div className={styles.charts}>
         <RepoActivityChart commits={commits} />
         {commits.length > 0 && <RepoTimelineChart commits={commits} />}

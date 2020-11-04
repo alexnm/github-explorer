@@ -12,8 +12,24 @@
   margin-right: 1rem;
 }
 
+.header .content {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .main {
   margin-top: 2rem;
+}
+
+.extraTitle {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .extraTitle {
+    display: inline;
+  }
 }
 
 @media only screen and (min-width: 932px) {

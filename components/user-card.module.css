@@ -8,9 +8,18 @@
   transition: var(--animation-fade);
 }
 
+.wrapper img {
+  transition: var(--animation-fade);
+}
+
 .wrapper:hover,
 .wrapper:focus {
   box-shadow: var(--drop-shadow);
+}
+
+.wrapper:hover > img,
+.wrapper:focus > img {
+  transform: rotate(10deg);
 }
 
 .wrapper:focus {

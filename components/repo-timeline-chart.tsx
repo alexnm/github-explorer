@@ -1,5 +1,5 @@
 import React from 'react'
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, BarChart, Bar } from 'recharts'
+import { XAxis, YAxis, CartesianGrid, Tooltip, BarChart, Bar } from 'recharts'
 import { GithubCommit } from '../types'
 import { getKeyFromTimestamp } from '../utils'
 

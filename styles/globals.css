@@ -49,3 +49,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+h1 {
+  font-size: 1.67rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.67rem;
+  }
+}

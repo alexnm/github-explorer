@@ -17,7 +17,10 @@ export const Layout: React.FC<LayoutProps> = ({ children, extraTitle }) => (
           </Link>{' '}
           {extraTitle && (
             <>
-              <span aria-hidden="true">&gt;</span> <span>{extraTitle}</span>
+              <span className={styles.extraTitle} aria-hidden="true">
+                &gt;
+              </span>{' '}
+              <span className={styles.extraTitle}>{extraTitle}</span>
             </>
           )}
         </h1>
