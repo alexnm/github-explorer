@@ -7,6 +7,8 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
 
   if (!searchText) {
     res.statusCode = 400
+
+    // @ts-ignore
     res.json({ status: 'Bad request' })
     return
   }

@@ -2,10 +2,13 @@ import { request } from '@octokit/request'
 import { IncomingMessage, ServerResponse } from 'http'
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
+  // @ts-ignore
   const { owner, repo } = req.query
 
   if (!owner || !repo) {
     res.statusCode = 400
+
+    // @ts-ignore
     res.json({ status: 'Bad request' })
     return
   }
@@ -19,6 +22,7 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
     per_page: 100,
   })
 
+  // @ts-ignore
   const mappedResult = result.data.map((user) => ({
     id: user.id,
     name: user.login,
@@ -28,5 +32,6 @@ export default async (req: IncomingMessage, res: ServerResponse) => {
   }))
 
   res.statusCode = 200
+  // @ts-ignore
   res.json(mappedResult)
 }

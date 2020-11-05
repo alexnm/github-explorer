@@ -22,6 +22,7 @@ export const getRepoCommits = async (owner: string, repo: string): Promise<Githu
   const response = await fetch(`/api/commits?owner=${owner}&repo=${repo}`)
   const responseJSON = await response.json()
 
+  // @ts-ignore
   return responseJSON.map((commit) => ({
     ...commit,
     timestamp: new Date(commit.timestamp),
