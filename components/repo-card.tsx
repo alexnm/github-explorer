@@ -9,7 +9,7 @@ export interface RepoCardProps {
 
 export const RepoCard: React.FC<RepoCardProps> = ({ repo }) => (
   <Link href={`${repo.ownerName}/${repo.name}`}>
-    <a className={styles.card}>
+    <a className={styles.card} title={`Open statistics for ${repo.name} by ${repo.ownerName}`}>
       <p className={styles.title}>
         {repo.ownerName}/{repo.name}
       </p>
