@@ -2,7 +2,14 @@ import { request } from '@octokit/request'
 import { GithubCommit, GithubRepoContributor, GithubRepositoryInfo } from '../types'
 
 export const searchRepoByName = async (searchText: string): Promise<GithubRepositoryInfo[]> => {
-  const response = await fetch(`/api/repos?searchText=${searchText}`)
+  const response = await fetch(`/api/search-repos?searchText=${searchText}`)
+  const responseJSON = await response.json()
+
+  return responseJSON as GithubRepositoryInfo[]
+}
+
+export const getReposByStars = async (): Promise<GithubRepositoryInfo[]> => {
+  const response = await fetch(`/api/repos`)
   const responseJSON = await response.json()
 
   return responseJSON as GithubRepositoryInfo[]
@@ -30,6 +37,7 @@ export const getRepoCommits = async (owner: string, repo: string): Promise<Githu
 }
 
 export default {
+  getReposByStars,
   searchRepoByName,
   getRepoContributors,
   getRepoCommits,

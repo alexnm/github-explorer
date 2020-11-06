@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Head from 'next/head'
 import { Layout } from '../components/layout'
 import { RepoActivityChart } from '../components/repo-activity-chart'
 import { RepoTimelineChart } from '../components/repo-timeline-chart'
@@ -41,10 +42,13 @@ export const RepoPageWrapper: React.FC<RepoPageWrapperProps> = ({ owner, repo })
 
   return (
     <Layout extraTitle={`${owner}/${repo}`}>
+      <Head>
+        <title>GitHub Explorer | {`${owner}/${repo}`}</title>
+      </Head>
       <h2>Project Activity</h2>
       <div className={styles.charts}>
         <RepoActivityChart commits={commits} />
-        {commits.length > 0 && <RepoTimelineChart commits={commits} />}
+        <RepoTimelineChart commits={commits} />
       </div>
 
       <div className={styles.contributors}>

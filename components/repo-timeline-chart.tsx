@@ -8,7 +8,11 @@ export interface RepoTimelineProps {
 }
 
 export const RepoTimelineChart: React.FC<RepoTimelineProps> = ({ commits }) => {
-  const commitsOrdered = commits.reverse()
+  if (commits.length === 0) {
+    return null
+  }
+
+  const commitsOrdered = [...commits].reverse()
   const firstTimestamp = new Date(commitsOrdered[0].timestamp)
   const lastCommitTimestamp = new Date(commitsOrdered[commits.length - 1].timestamp)
   const commitsTimeline: Record<string, { commits: number; month: string }> = {}

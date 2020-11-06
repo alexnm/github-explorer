@@ -2,13 +2,22 @@ import { request } from '@octokit/request'
 import { IncomingMessage, ServerResponse } from 'http'
 
 export default async (req: IncomingMessage, res: ServerResponse) => {
+  // @ts-ignore
+  const searchText = req.query.searchText
+
+  if (!searchText) {
+    res.statusCode = 400
+
+    // @ts-ignore
+    res.json({ status: 'Bad request' })
+    return
+  }
+
   const githubResult = await request('GET /search/repositories', {
     headers: {
       authorization: `token ${process.env.GITHUB_TOKEN}`,
     },
-    q: 'stars:>500',
-    sort: 'stars',
-    order: 'desc',
+    q: searchText,
   })
 
   const mappedResult = githubResult.data.items.map((repo) => ({
