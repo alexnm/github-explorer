@@ -30,6 +30,7 @@ export const SearchBar = React.forwardRef<HTMLInputElement, SearchBarProps>(
           ref={ref}
           className={styles.input}
           type="text"
+          aria-label="search on github"
           placeholder="eg: react, vue, ..."
           defaultValue={searchText}
           onChange={handleInputChange}

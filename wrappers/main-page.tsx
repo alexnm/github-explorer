@@ -44,16 +44,18 @@ export const MainPageWrapper = () => {
         <title>GitHub Explorer</title>
       </Head>
       <SearchBar onSearchChange={handleSearch} initialValue={initialSearchText} ref={searchInput} />
-      {searchState === 'pending' && <span>Loading...</span>}
-      {searchState === 'done' && (
-        <ul>
-          {repos.map((repo) => (
-            <li key={repo.id}>
-              <RepoCard repo={repo} />
-            </li>
-          ))}
-        </ul>
-      )}
+      <div role="region" aria-live="polite">
+        {searchState === 'pending' && <span aria-label="loading results">Loading...</span>}
+        {searchState === 'done' && (
+          <ul aria-label="search results">
+            {repos.map((repo) => (
+              <li key={repo.id}>
+                <RepoCard repo={repo} />
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
     </Layout>
   )
 }
