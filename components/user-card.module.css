@@ -6,6 +6,7 @@
   width: auto;
   padding-right: 1rem;
   transition: var(--animation-fade);
+  overflow: hidden;
 }
 
 .wrapper img {
@@ -19,7 +20,7 @@
 
 .wrapper:hover > img,
 .wrapper:focus > img {
-  transform: rotate(10deg);
+  transform: rotate(10deg) scale(1.2);
 }
 
 .wrapper:focus {
