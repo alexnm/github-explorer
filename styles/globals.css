@@ -12,15 +12,15 @@
   --color-accent-100: #144620;
 
   --drop-shadow: 0 2px 8px 1px rgba(18, 18, 18, 0.3);
-  --animation-fade: all 0.15s ease-out;
+  --animation-fade: all 0.1s ease-out;
 }
 
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-size: 100%;
   color: var(--color-fg-500);
 }
